@@ -21,8 +21,8 @@ def position(event,a,b,flag,param):
 def nothing(x):
     pass
 
-#Change to UDP reading later
-vid = cv.VideoCapture(0)
+vid = cv.VideoCapture("udp://192.168.100.52:1234")
+vid.set(cv.CAP_PROP_FPS, 25)
 
 cv.namedWindow('interface')
 cv.setMouseCallback('interface',position)
